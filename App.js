@@ -1,21 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import Card from "./components/card.js";
+import ButtonBar from "./components/buttonBar.js";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Card style={styles.card}/>
+      <ButtonBar style={styles.buttonBar}/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100%',
   },
+
+  card: {
+    flex: 0.99,
+  },
+
+  buttonBar: {
+    flex: 0.01,
+    color: '#123',
+  }
 });
