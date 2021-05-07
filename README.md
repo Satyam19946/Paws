@@ -7,3 +7,6 @@
 **Current Sample Screens**
 
 ![The Matching Screen](./screen_examples/matchingScreen.jpg)
+
+Currently working on fixing icons on this branch.
+Approach -> Use react-native-svg and render the icon where necessary
