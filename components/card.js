@@ -1,6 +1,12 @@
-// A  card should have an image, name, and age.
+/**
+ * Written by - Satyam Gupta
+ * Date - 5/5/2021
+ * 
+ * A card acts like a card on Tinder - containing all the relevnat information of a person
+ * This information includes photos, name, age, passions, summary, details, etc.
+ */
 import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView, Text } from 'react-native';
+import { View, StyleSheet, ScrollView, Text, Image } from 'react-native';
 
 const PLACEHOLDER = "PLACEHOLDER"
 var currentImage = PLACEHOLDER;
@@ -11,8 +17,7 @@ const Card = (props) => {
     
     return(
             <View style={styles.cardContainer}>
-                <View style={styles.image}/>
-                <Text> Can u see the card </Text>
+                <Image style={styles.image} source={require("../assets/images/image1.jpg")}/>
             </View>
         );
 }
@@ -20,22 +25,20 @@ const Card = (props) => {
 const styles = StyleSheet.create({
     
     cardContainer: {
+        flexDirection: 'row',
         backgroundColor: '#fff',
+        width: '100%',
         height: '80%',
-        width: '80%',
         alignItems: 'center',
-        justifyContent: 'center',
         alignSelf: 'center',
-        placeItems: 'center',
+        justifyContent: 'center',
     },
 
     image: {
-        backgroundColor: '#456',
-        height: '80%',
-        width: '80%',
-        maxHeight: '500px',
-        maxWidth: '500px',
-        borderRadius: '5%',
+        height: '100%',
+        width: '100%',
+        maxWidth: '414px',
+        maxHeight: '750px',
     }
 
 

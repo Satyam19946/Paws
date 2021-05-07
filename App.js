@@ -5,9 +5,10 @@ import Card from "./components/card.js";
 import ButtonBar from "./components/buttonBar.js";
 
 export default function App() {
+
   return (
     <View style={styles.container}>
-      <Card style={styles.card}/>
+      <Card key={"myCard"} style={styles.card}/>
       <ButtonBar style={styles.buttonBar}/>
     </View>
   );
@@ -21,11 +22,15 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    flex: 0.99,
+    width: '100%',
+    height: '90%',
+    marginBottom: '10px',
   },
 
   buttonBar: {
-    flex: 0.01,
+    flex: 0.10,
     color: '#123',
+    alignSelf: 'center',
+    justifyContent: 'center',
   }
 });
