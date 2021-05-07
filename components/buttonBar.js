@@ -12,14 +12,11 @@ import RoundButton from './roundButton.js';
 const buttonBar = (props) => {
     const [currentButton, updateCurrentButton] = useState(1);
 
-    const strUrlSuperLikeIcon = 'https://www.figma.com/file/uQSwdMXvu3zPumdPl5tuM6/tinderClone?node-id=2%3A18';
-    const strUrlLikeIcon = 'https://www.figma.com/file/uQSwdMXvu3zPumdPl5tuM6/tinderClone?node-id=2%3A16';
-    const strUrlReverseIcon = 'https://www.figma.com/file/uQSwdMXvu3zPumdPl5tuM6/tinderClone?node-id=2%3A11';
     return (
         <View style={styles.buttonBar}>
-            <RoundButton styles={styles.buttonBar} buttonSize={80} sourecUrl={strUrlReverseIcon} typeOfButton={'reverse'}/>
-            <RoundButton styles={styles.buttonBar} buttonSize={80} sourceUrl={strUrlSuperLikeIcon} typeOfButton={'superlike'}/>
-            <RoundButton styles={styles.buttonBar} buttonSize={80} sourceUrl={strUrlLikeIcon} typeOfButton={'like'}/>
+            <RoundButton styles={styles.buttonBar} buttonSize={80} typeOfButton={'reverse'}/>
+            <RoundButton styles={styles.buttonBar} buttonSize={80} typeOfButton={'superlike'}/>
+            <RoundButton styles={styles.buttonBar} buttonSize={80} typeOfButton={'like'}/>
         </View>
     );
 }
@@ -27,11 +24,14 @@ const buttonBar = (props) => {
 const styles = StyleSheet.create({
     buttonBar: {
         flex: 1,
+        alignSelf: 'center',
         alignContent: "center",
         justifyContent: "center",
         flexDirection: "row",
         width: '100%',
         color: '#123',
+        backgroundColor: '#ececec', 
+        maxWidth: '414px',
     },
     
     roundButton: {

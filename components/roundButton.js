@@ -6,9 +6,11 @@
  */
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import LikeIcon from './likeIcon.js';
+import LikeIcon from '../icons/likeIcon.js';
+import SuperLikeIcon from '../icons/superLikeIcon.js';
+import ReverseIcon from '../icons/ReverseIcon.js';
 
-const typeOfButtons = ['like', 'dislike', 'superlike', 'reverse'];
+const typeOfButtons = ['reverse', 'superlike', 'like'];
 
 const RoundButton = (props) => {
     let styleForThisButton = styles(props);
@@ -31,11 +33,13 @@ const RoundButton = (props) => {
         <View style={styleForThisButton.container}>
             <TouchableOpacity
                 onPress = {() => buttonPressed()}
-                activeOpacity={.8}
+                activeOpacity={1}
                 style={styleForThisButton.button}
             >
-                {/* <LikeIcon/> */}
-                <Image style={styleForThisButton.image} source={require("../assets/icons/heart.png")}/>
+                {typeOfButton === "like" && <LikeIcon/>}
+                {typeOfButton === "superlike" && <SuperLikeIcon/>}
+                {typeOfButton === "reverse" && <ReverseIcon/>}
+                {/* <Image style={styleForThisButton.image} source={require("../assets/icons/heart.png")}/> */}
             </TouchableOpacity>
         </View>
     )
@@ -52,12 +56,11 @@ const styles = (props) => StyleSheet.create({
     button: {
         justifyContent: 'center',
         alignContent: 'center',
-        borderWidth: 3,
         borderRadius: (props.buttonSize) / 2,
         width: props.buttonSize,
         height: props.buttonSize,
-        marginLeft: '6px',
-        marginRight: '6px',
+        marginLeft: '20px',
+        marginRight: '20px',
     },
 
     image: {
