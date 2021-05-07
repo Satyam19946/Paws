@@ -8,10 +8,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView, Text, Image } from 'react-native';
 
-const PLACEHOLDER = "PLACEHOLDER"
-var currentImage = PLACEHOLDER;
-
-
 const Card = (props) => {
     const [startState, updateStartState] = useState(1);
     
@@ -38,11 +34,7 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         maxWidth: '414px',
-        maxHeight: '750px',
     }
-
-
-
   });
 
 export default Card;
