@@ -6,15 +6,39 @@
  * This information includes photos, name, age, passions, summary, details, etc.
  */
 import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView, Text, Image } from 'react-native';
+import { View, StyleSheet, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
 
 const Card = (props) => {
     const [startState, updateStartState] = useState(1);
-    
+
+    const [currentImage, updateCurrentImage] = useState('../assets/images/image1.jpg');
+
+    /**
+     * Handles what happens when you click on the card.
+     * 
+     * Click Left -> go forward in the deck
+     * Click Right -> go backward in the deck
+     * 
+     */
+    function onCardPress(e) {
+        console.log(e.pageX);
+        console.log(window.innerWidth);
+        if (e.pageX / window.innerWidth > 0.5){
+            console.log('right');
+        } else {
+            console.log('left');
+        }
+    }
+
     return(
-            <View style={styles.cardContainer}>
-                <Image style={styles.image} source={require("../assets/images/image1.jpg")}/>
-            </View>
+                <TouchableOpacity
+                    onPress={(event) => onCardPress(event)}
+                    activeOpacity={1}
+                    typeOfTouch={'left'}
+                    style={styles.cardContainer}
+                    >
+                <Image style={styles.image} source={require("../assets/images/card1image1.jpg")}/>
+                </TouchableOpacity>
         );
 }
 
@@ -28,6 +52,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         justifyContent: 'center',
+        maxWidth: '414px',
     },
 
     image: {
